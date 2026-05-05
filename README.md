@@ -18,7 +18,7 @@ En caso de usarlo local no necesita, dependencias ni servidor con backend. Es un
 
 ### Subir al servidor
 
-1. Copiá el archivo `generador-firma-arbusta.html` a tu servidor o hosting.
+1. Copiá el archivo `index.html` a tu servidor o hosting.
 2. Accedé desde el navegador a la URL donde lo subiste.
 
 ```
