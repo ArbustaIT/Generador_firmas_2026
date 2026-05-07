@@ -58,7 +58,7 @@ https://firma.arbusta.net/
 
 ```
 /
-└── generador-firma-arbusta.html   # Toda la aplicación en un solo archivo
+└── index.html   # Toda la aplicación en un solo archivo
 ```
 
 El archivo contiene todo integrado:
@@ -83,6 +83,10 @@ El archivo contiene todo integrado:
 | `f-linkedin` | Usuario de LinkedIn (sin URL) | `linkedin` |
 | `f-web` | Sitio web | `arbusta.net` |
 
+> **Comportamiento de los links en la firma:**
+> - El **email** genera un enlace `mailto:` para abrir el cliente de correo.
+> - El **teléfono** genera un enlace `wa.me/` para abrir una conversación de WhatsApp. Los caracteres no numéricos se eliminan automáticamente.
+
 ---
 
 ## 🎨 Diseño y tipografías
@@ -102,6 +106,16 @@ El archivo contiene todo integrado:
 | [Figtree](https://fonts.google.com/specimen/Figtree) | Nombre y Cargo |
 | [Martian Mono](https://fonts.google.com/specimen/Martian+Mono) | Datos de contacto, links |
 
+#### Jerarquía de tamaños de la firma
+
+| Elemento | Tamaño |
+|---|---|
+| Nombre | 16px |
+| Rol / Cargo | 14px |
+| Empresa · Ciudad | 12px |
+| Email · Teléfono | 12px |
+| LinkedIn · Web | 10px |
+
 > ⚠️ **Nota importante:** Las tipografías de Google Fonts se visualizan correctamente en la **preview de la web**, pero Gmail y Outlook **no cargan fuentes externas**. En el correo real, los clientes de mail usarán el fallback definido (`Arial` para nombre/cargo, `monospace` para contacto). Esto es una limitación de los clientes de correo, no de la herramienta.
 
 ---
@@ -118,7 +132,16 @@ Buscá los `input` en el HTML y modificá el atributo `value`:
 
 ### Cambiar los colores de la firma
 
-En la función `buildSig()` dentro del `<script>`, los colores están definidos como estilos inline. El color principal de Arbusta es `#7B3FC4`.
+En la función `buildSig()` dentro del `<script>`, los colores están definidos como estilos inline.
+
+#### Paleta de colores actual de la firma
+
+| Elemento | Color | Hex |
+|---|---|---|
+| Nombre | Grape | `#7229bc` |
+| Rol / Cargo | Aubergine | `#2A103E` |
+| Ubicación | Graphite | `#2C2927` |
+| Email, Teléfono, LinkedIn, Web | Aubergine | `#2A103E` |
 
 ### Cambiar el logo
 
@@ -141,7 +164,7 @@ El logo está embebido como base64 en la variable `logoSVG` dentro del `<script>
 | Apple Mail | ✅ | ✅ |
 | Thunderbird | ✅ | ✅ |
 
-**Navegadores soportados:** Chrome, Firefox, Safari, Edge (versiones hasta 2026, se desconoce compatibilidad posterior).
+**Navegadores soportados:** Chrome, Firefox, Safari, Edge (versiones modernas).
 
 ---
 
